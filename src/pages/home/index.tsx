@@ -9,8 +9,10 @@ import {
 import { LocationSelector } from 'features/location-selector'
 import { useLocationStore } from 'features/location-selector/store'
 import { getWeatherByCity } from 'shared/api'
+import { getMonth } from 'shared/lib/getMonth/getMonth'
 import { useHomePageStyles } from './HomePage.styles'
 import { DataType } from './lib'
+
 const HomePage = () => {
   const [weatherData, setWeatherData] = useState<DataType>({} as DataType)
   const { location } = useLocationStore()
@@ -36,7 +38,8 @@ const HomePage = () => {
           windSpeed={Number(weatherData?.current?.wind_speed) ?? 0}
         />
         <WeatherHourly
-          date={`${Date().split(' ')[1]}, ${Date().split(' ')[2]}`}
+          date={`${getMonth(date.getMonth())}, ${date.getDay()}`}
+          time={date.getHours()}
         />
         <NextForecast
           temperature={Number(weatherData?.current?.temperature ?? 0)}
