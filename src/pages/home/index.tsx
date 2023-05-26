@@ -40,9 +40,10 @@ const HomePage = () => {
         <WeatherHourly
           date={`${getMonth(date.getMonth())}, ${date.getDay()}`}
           time={date.getHours()}
+          temperature={Number(weatherData?.current?.temperature ?? 25)}
         />
         <NextForecast
-          temperature={Number(weatherData?.current?.temperature ?? 0)}
+          temperature={Number(weatherData?.current?.temperature ?? 25)}
           date={date}
         />
       </Stack>

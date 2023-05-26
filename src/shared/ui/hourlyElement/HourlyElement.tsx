@@ -25,7 +25,7 @@ export const HourlyElement = ({
         alignItems: 'center',
       }}
     >
-      {temperature}
+      {`${temperature}°C`}
       {icon}
       {time}
     </Stack>

@@ -1,14 +1,12 @@
 export const getWeekDay = (weekDay: number) => {
   const weekDays = [
-    '',
-    '',
+    'Saturday',
+    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday',
-    'Sunday',
   ]
   return weekDays[weekDay]
 }

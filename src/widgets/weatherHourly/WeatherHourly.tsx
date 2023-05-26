@@ -1,5 +1,6 @@
 import { Flex, Stack, Text } from '@mantine/core'
 import { useWeatherHourlyStyles } from 'widgets/weatherHourly/WeatherHourly.styles'
+import { getRandomTemperature } from 'shared/lib/getRandomTemperature/GetRandomTemperature'
 import { HourlyElement } from 'shared/ui'
 interface WeatherTodayProps {
   time: number
@@ -38,7 +39,10 @@ export const WeatherHourly = ({
 
       <Flex className={classes.time}>
         {weather.map(({ time, temperature }) => (
-          <HourlyElement temperature={temperature ?? 0} time={`${time}.00`} />
+          <HourlyElement
+            temperature={getRandomTemperature(temperature) ?? 0}
+            time={`${time}.00`}
+          />
         ))}
       </Flex>
     </Stack>

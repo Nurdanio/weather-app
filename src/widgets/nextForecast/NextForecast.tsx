@@ -11,18 +11,21 @@ interface NextForecastProps {
 export const NextForecast = ({ date, temperature }: NextForecastProps) => {
   const { classes } = useNextForeCastStyles()
   const updatedDate = new Date(date)
-  updatedDate.setDate(updatedDate.getDate() + 1)
 
   const forecastElement = Array(10)
     .fill(null)
-    .map(() => (
-      <NextForecastElement
-        day={updatedDate.getDate()}
-        weekDay={updatedDate.getDay()}
-        month={updatedDate.getMonth()}
-        temperature={temperature}
-      />
-    ))
+    .map(() => {
+      updatedDate.setDate(updatedDate.getDate() + 1)
+
+      return (
+        <NextForecastElement
+          day={updatedDate.getDate()}
+          weekDay={updatedDate.getDay()}
+          month={updatedDate.getMonth()}
+          temperature={temperature}
+        />
+      )
+    })
 
   return (
     <Stack className={classes.stack}>
@@ -30,7 +33,6 @@ export const NextForecast = ({ date, temperature }: NextForecastProps) => {
         <Text>Next Forecast</Text>
         <CalendarIcon style={{ width: '20px', height: '20px' }} />
       </Flex>
-
       {forecastElement}
     </Stack>
   )
