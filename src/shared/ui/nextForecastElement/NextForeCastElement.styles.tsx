@@ -10,6 +10,7 @@ export const useNextForeCastElementStyles = createStyles(() => ({
   },
   stack: {
     gap: 0,
+    width: 70,
   },
   icon: {
     width: '35px',

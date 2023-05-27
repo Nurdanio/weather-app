@@ -8,7 +8,6 @@ export const useHomePageStyles = createStyles((theme) => ({
     overflowY: 'auto',
     borderRadius: 40,
     gap: 20,
-    // justifyContent: 'center',
     alignItems: 'center',
     background: theme.fn.linearGradient(
       167.44,

@@ -1,8 +1,9 @@
 import { Flex, Stack, Text } from '@mantine/core'
 import { ReactNode } from 'react'
-import { ReactComponent as SunCloudIcon } from 'shared/img/if-weather-2-2682849_90781.svg'
+import { ReactComponent as SunCloudIcon } from 'shared/img/cloudyWithClarifications.svg'
 import { getMonth } from 'shared/lib/getMonth/getMonth'
 import { getRandomTemperature } from 'shared/lib/getRandomTemperature/GetRandomTemperature'
+import { getWeatherIcon } from 'shared/lib/getWeatherIcon/getWeatherIcon'
 import { getWeekDay } from 'shared/lib/getWeekDay/getWeekDay'
 import { useNextForeCastElementStyles } from 'shared/ui/nextForecastElement/NextForeCastElement.styles'
 
@@ -30,7 +31,7 @@ export const NextForecastElement = ({
           {getMonth(month)} {day}
         </Text>
       </Stack>
-      <Text className={classes.icon}>{icon}</Text>
+      <Text className={classes.icon}>{getWeatherIcon()}</Text>
       <Flex gap={10}>
         <Text className={classes.dayTemperature}>{`${getRandomTemperature(
           temperature

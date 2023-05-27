@@ -1,6 +1,6 @@
 import { Stack } from '@mantine/core'
 import { ReactNode } from 'react'
-import { ReactComponent as CloudIcon } from 'shared/img/if-weather-1-2682850_90755.svg'
+import { ReactComponent as CloudIcon } from 'shared/img/cloudy.svg'
 
 interface HourlyElementProps {
   temperature: number

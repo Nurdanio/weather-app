@@ -1,5 +1,6 @@
-import { Center, Stack } from '@mantine/core'
+import { Center, Flex, Stack } from '@mantine/core'
 import { useEffect, useState } from 'react'
+import { RiNotification2Line as NotificationIcon } from 'react-icons/ri'
 import {
   WeatherToday,
   WeatherHourly,
@@ -28,7 +29,10 @@ const HomePage = () => {
   return (
     <Center h="100vh">
       <Stack className={classes.stack}>
-        <LocationSelector />
+        <Flex w="100%" justify="space-between" align="center">
+          <LocationSelector />
+          <NotificationIcon style={{ color: 'white', width: 30, height: 30 }} />
+        </Flex>
         <WeatherToday
           temperature={Number(weatherData?.current?.temperature ?? 0)}
         />
@@ -38,7 +42,7 @@ const HomePage = () => {
           windSpeed={Number(weatherData?.current?.wind_speed) ?? 0}
         />
         <WeatherHourly
-          date={`${getMonth(date.getMonth())}, ${date.getDay()}`}
+          date={`${getMonth(date.getMonth())}, ${date.getDate()}`}
           time={date.getHours()}
           temperature={Number(weatherData?.current?.temperature ?? 25)}
         />

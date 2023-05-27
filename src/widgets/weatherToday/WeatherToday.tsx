@@ -1,6 +1,6 @@
 import { Flex, Stack, Text } from '@mantine/core'
 import { useWeatherTodayStyles } from 'widgets/weatherToday/WeatherToday.styles'
-import { ReactComponent as SunIcon } from 'shared/img/Sun cloud angled rain.svg'
+import { ReactComponent as CloudyWithClarifications } from 'shared/img/cloudyWithClarifications.svg'
 
 interface WeatherTodayProps {
   temperature: number
@@ -11,7 +11,8 @@ export const WeatherToday = ({ temperature }: WeatherTodayProps) => {
 
   return (
     <Stack className={classes.stack}>
-      <SunIcon />
+      {/*<SunIcon />*/}
+      <CloudyWithClarifications />
       <Text className={classes.temperature}>{`${temperature}°C`}</Text>
       <Text className={classes.precipitation}>Precipitations</Text>
       <Flex gap={10}>
